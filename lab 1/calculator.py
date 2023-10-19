@@ -1,7 +1,7 @@
 from cmath import sqrt
-from variables import defaultroundto
-from variables import memory
-from variables import results
+from data import defaultroundto
+from data import memory
+from data import results
 
 #User class
 class User:
