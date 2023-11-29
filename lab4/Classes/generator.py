@@ -12,8 +12,8 @@ class ASCIIArtGenerator:
         input_lines = self.user_input.split('\n')
         max_length = max(len(line) for line in input_lines)
 
-        self.ascii_art = [''] * len(self.language['A'])
-        for i in range(len(self.language['A'])):
+        self.ascii_art = [''] * len(self.language[' '])
+        for i in range(len(self.language[' '])):
             for line in input_lines:
                 if self.alignment == 'center':
                     line = line.center(max_length)

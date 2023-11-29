@@ -1,7 +1,6 @@
-from generator import ASCIIArtGenerator 
-from input import InputHandler
-from data import color_mapping
-
+from Classes.generator import ASCIIArtGenerator 
+from Classes.input import InputHandler
+from Data.data import color_mapping
 
 while(1):
     user_language = InputHandler.get_language()
@@ -12,7 +11,6 @@ while(1):
     alignment = InputHandler.get_alignment()
     color = color_mapping[InputHandler.get_color()]
     ascii_art = ASCIIArtGenerator(user_input,color,width,height,alignment,user_language)
-
 
     ascii_art.generate_ascii_art()
     ascii_art.display_ascii_art()

@@ -1,5 +1,5 @@
-from exceptions import IncorrectArgumentException
-from languages import *
+from Classes.exceptions import IncorrectArgumentException 
+from Data.languages import *
 
 class InputHandler:
     def get_user_input():
@@ -7,7 +7,7 @@ class InputHandler:
         if input_value.isalpha():
             return input_value
         else:
-            raise 2
+            raise IncorrectArgumentException("Input must contain only alphabetic characters.")
         
 
 
