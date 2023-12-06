@@ -1,5 +1,5 @@
-from Classes.exceptions import IncorrectArgumentException 
-from Data.languages import *
+from .exceptions import IncorrectArgumentException 
+from ..Data.languages import *
 
 class InputHandler:
     def get_user_input():

@@ -1,5 +1,5 @@
-from data import defaultroundto
-from data import memory
+from lab2.data import defaultroundto
+from lab2.data import memory
 
 #User class
 class User:

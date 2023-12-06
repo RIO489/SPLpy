@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from calculator import Calculator
+from .calculator import Calculator
 
 class TestCalculator(unittest.TestCase):
     def test_input(self):

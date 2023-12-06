@@ -1,5 +1,5 @@
 # main.py
-from test import TestCalculator
+from .test import TestCalculator
 import unittest
 
 def main():

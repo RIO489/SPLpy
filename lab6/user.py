@@ -1,5 +1,5 @@
-from data import defaultroundto
-from data import memory
+from .data import defaultroundto
+from .data import memory
 
 class User:
     def __init__(self,name):

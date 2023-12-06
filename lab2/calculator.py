@@ -1,6 +1,6 @@
-from data import results
-from exception import CalculationException, IncorrectOperatorException
-from user import User
+from lab2.data import results
+from lab2.exception import CalculationException, IncorrectOperatorException
+from lab2.user import User
 
 class Calculator:
      def __init__(self):
