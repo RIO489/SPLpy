@@ -1,0 +1,166 @@
+[
+    {
+        "username": "john_doe",
+        "first_name": "John",
+        "last_name": "Doe",
+        "age": 30,
+        "fav_color": "blue",
+        "hobbies": [
+            [
+                "reading"
+            ],
+            [
+                "cycling"
+            ]
+        ],
+        "email": "johndoe@example.com"
+    },
+    {
+        "username": "alice_smith",
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "age": 25,
+        "fav_color": "green",
+        "hobbies": [
+            [
+                "painting"
+            ],
+            [
+                "traveling"
+            ]
+        ],
+        "email": "alicesmith@example.com"
+    },
+    {
+        "username": "bob_brown",
+        "first_name": "Bob",
+        "last_name": "Brown",
+        "age": 40,
+        "fav_color": "red",
+        "hobbies": [
+            [
+                "fishing"
+            ],
+            [
+                "gardening"
+            ]
+        ],
+        "email": "bobbrown@example.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "yellow",
+        "hobbies": [
+            [
+                "programming"
+            ],
+            [
+                "sport activities"
+            ]
+        ],
+        "email": "zagr489@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "yellow",
+        "hobbies": [
+            [
+                "programming"
+            ],
+            [
+                "sport"
+            ]
+        ],
+        "email": "zagr489@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "red",
+        "hobbies": [
+            [
+                "skying"
+            ]
+        ],
+        "email": "rabbit123@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "red",
+        "hobbies": [
+            [
+                "ewq"
+            ]
+        ],
+        "email": "sfw@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "yellow",
+        "hobbies": [
+            [
+                "sport1"
+            ]
+        ],
+        "email": "gwwe@ukr.net"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "11",
+        "fav_color": "red",
+        "hobbies": [
+            [
+                "wasting time"
+            ]
+        ],
+        "email": "12@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "blue",
+        "hobbies": [
+            [
+                "sport"
+            ],
+            [
+                "skying"
+            ]
+        ],
+        "email": "12312@gmail.com"
+    },
+    {
+        "username": "RIO489",
+        "first_name": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+        "last_name": "\u0413\u0430\u043c\u0430\u044e\u043d\u043e\u0432",
+        "age": "20",
+        "fav_color": "red",
+        "hobbies": [
+            [
+                "sport"
+            ],
+            [
+                "skying"
+            ]
+        ],
+        "email": "123@gmail.com"
+    }
+]
