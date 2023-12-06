@@ -1,4 +1,3 @@
-#5655207446:AAFV0v3R8scQtxhuuApOgGCnWkx7Tp1mXAM
 import os
 import json
 from prettytable import PrettyTable
