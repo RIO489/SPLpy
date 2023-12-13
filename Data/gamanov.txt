@@ -1,0 +1,5 @@
+[90m GGG [0m[90m  A  [0m[90mM   M[0m[90m  A  [0m[90mN   N[0m[90m OOO [0m[90mV   V[0m
+[90mG    [0m[90m A A [0m[90mMM MM[0m[90m A A [0m[90mNN  N[0m[90mO   O[0m[90mV   V[0m
+[90mG  GG[0m[90mAAAAA[0m[90mM M M[0m[90mAAAAA[0m[90mN N N[0m[90mO   O[0m[90mV   V[0m
+[90mG   G[0m[90mA   A[0m[90mM   M[0m[90mA   A[0m[90mN  NN[0m[90mO   O[0m[90m V V [0m
+[90m GGG [0m[90mA   A[0m[90mM   M[0m[90mA   A[0m[90mN   N[0m[90m OOO [0m[90m  V  [0m
