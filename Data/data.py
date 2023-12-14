@@ -1,17 +1,18 @@
-defaultroundto = 3
+""" Storage for all variables"""
+DEFAULT_ROUNDTO = 3
 results = []
 memory = []
-user_is_registered = False
-count = 0
+USER_IS_REGISTERED = False
+COUNT = 0
 color_mapping = {
     '@': '30',
     '#': '90',
     '*': '97'
 }
-user_font = "standart"
-user_art = ""
+USER_FONT = "standart"
+USER_ART = ""
 colors = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"]
-user_char = ""
-replacement_dict = None
+USER_CHAR = ""
+REPLACEMENT_DICT = None
 user_data = {}
 AGE, FAVORITE_COLOR, HOBBIES, EMAIL = range(4)

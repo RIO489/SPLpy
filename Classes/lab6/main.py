@@ -1,13 +1,14 @@
-# main.py
-from .classes.test import TestCalculator
+""" Main file"""
 import unittest
+from .classes.test import TestCalculator
 
 def main():
-   suite = unittest.TestLoader().loadTestsFromTestCase(TestCalculator)
+    """ Main method"""
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestCalculator)
 
-   runner = unittest.TextTestRunner()
+    runner = unittest.TextTestRunner()
 
-   runner.run(suite)
-   
+    runner.run(suite)
+
 if __name__ == "__main__":
     main()

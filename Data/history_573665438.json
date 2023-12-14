@@ -38,5 +38,35 @@
         "message": "Email entered: 123@gnail.com",
         "answer": "email is valid and saved.",
         "timestamp": "2023-12-13T01:13:15.874297"
+    },
+    {
+        "message": "Age entered: wqe",
+        "answer": "Invalid age format.",
+        "timestamp": "2023-12-13T13:52:50.335109"
+    },
+    {
+        "message": "Age entered: 21",
+        "answer": "Age is valid and saved.",
+        "timestamp": "2023-12-13T13:52:52.834113"
+    },
+    {
+        "message": "Color entered: qwe",
+        "answer": "Invalid color format.",
+        "timestamp": "2023-12-13T13:52:54.685111"
+    },
+    {
+        "message": "Color entered: red",
+        "answer": "Color is valid and saved.",
+        "timestamp": "2023-12-13T13:52:55.705112"
+    },
+    {
+        "message": "hobbies entered: skying",
+        "answer": "hobbies is valid and saved.",
+        "timestamp": "2023-12-13T13:52:59.386111"
+    },
+    {
+        "message": "Email entered: 123@gmail.com",
+        "answer": "email is valid and saved.",
+        "timestamp": "2023-12-13T13:53:03.422113"
     }
 ]

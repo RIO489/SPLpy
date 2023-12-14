@@ -1,47 +1,37 @@
+""" Bot main"""
 import os
 import json
+from datetime import datetime
 from prettytable import PrettyTable
 
-from Data.data import *
-from .validator import Validator
-from telegram import Update 
+from telegram import Update
 from telegram.constants import ParseMode
-from telegram.ext import Application, CommandHandler, MessageHandler, filters,ContextTypes,ConversationHandler
-from datetime import datetime
-#from ..data.variables import *
-########################################
-import sys
-from pathlib import Path
-
-# Add the 'data' directory to sys.path to find the variables module
-#data_dir = str(Path(__file__).resolve().parent.parent / 'data')
-#if data_dir not in sys.path:
-   # sys.path.append(data_dir)
-
-#from variables import *
-########################################
-# Визначення базового шляху до папки 'data'
-#DATA_FOLDER = Path(__file__).resolve().parent.parent / 'data'
+from telegram.ext import Application,CommandHandler,MessageHandler,filters
+from telegram.ext import ContextTypes,ConversationHandler
+from Data.data import user_data, AGE, HOBBIES, FAVORITE_COLOR , EMAIL
+from .validator import Validator
 DATA_FOLDER = 'Data'
 
 validator =  Validator()
 #bottest = TestBot()
 
 def get_user_history_filename(chat_id):
+    """get user history """
     return os.path.join(DATA_FOLDER, f'history_{chat_id}.json')
 
 def get_users_filename():
-    return os.path.join(DATA_FOLDER, f'users.json')
+    """ get user info"""
+    return os.path.join(DATA_FOLDER, 'users.json')
 
 def save_history(chat_id, message, answer):
+    """ save user history"""
     filename = get_user_history_filename(chat_id)
     try:
-        with open(filename, 'r+') as file:
-            history = json.load(file)
+        with open(filename, 'r+',encoding = 'UTF-8') as file:
+            history_file = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
-        history = []
-   
-    history.append({
+        history_file = []
+    history_file.append({
         'message': message,
         'answer': answer,
         'timestamp': datetime.now().isoformat()
@@ -49,19 +39,20 @@ def save_history(chat_id, message, answer):
 
     os.makedirs(DATA_FOLDER, exist_ok=True)
 
-    with open(filename, 'w') as file:
-        json.dump(history, file, indent=4)
-
+    with open(filename, 'w',encoding = 'UTF-8') as file:
+        json.dump(history_file, file, indent=4)
+ 
 # Команда для перегляду історії користувача
 async def history(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """ Load user history"""
     chat_id = update.effective_chat.id
     filename = get_user_history_filename(chat_id)
     try:
-        with open(filename, 'r') as file:
-            history = json.load(file)
+        with open(filename, 'r',encoding = 'UTF-8') as file:
+            history_file = json.load(file)
             message = "Ваша історія запитів:\n\n"
             os.makedirs(DATA_FOLDER, exist_ok=True)
-            for item in history:
+            for item in history_file:
                 message += f"{item['timestamp']}: Запит - {item['message']}\nВідповідь - {item['answer']}\n\n"
             await update.message.reply_text(message)
     except FileNotFoundError:
@@ -70,6 +61,7 @@ async def history(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 # Команда для початку введення завдань
 async def start_task_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ Start inpunt option"""
     chat_id = update.effective_chat.id
     username = update.effective_user.username
     first_name = update.effective_user.first_name
@@ -90,6 +82,7 @@ async def start_task_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 # Handlers for each state in the conversation
 async def age_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ Age input"""
     age = update.message.text
     chat_id = update.effective_chat.id
     if validator.validate_age(age):
@@ -106,6 +99,7 @@ async def age_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 
 async def favorite_color_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ color input"""
     chat_id = update.effective_chat.id
     color = update.message.text
     if validator.validate_color(color):
@@ -120,6 +114,7 @@ async def favorite_color_input(update: Update, context: ContextTypes.DEFAULT_TYP
         return FAVORITE_COLOR
 
 async def hobbie_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ hobbie input"""
     chat_id = update.effective_chat.id
     hobbies = update.message.text
     # Split the hobbies by comma and remove leading/trailing whitespace
@@ -137,6 +132,7 @@ async def hobbie_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
 
 
 async def email_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ email input"""
     chat_id = update.effective_chat.id
     email = update.message.text
     if validator.validate_email(email):
@@ -153,9 +149,10 @@ async def email_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
 
 # Зберегти введені дані користувача
 def save_user_data(user_data):
+    """ save user data"""
     try:
         # Try to open the file and read existing data
-        with open(get_users_filename(), 'r+') as file:
+        with open(get_users_filename(), 'r+',encoding = 'UTF-8') as file:
             os.makedirs(DATA_FOLDER, exist_ok=True)
             data = json.load(file)
             # Append new user data
@@ -166,16 +163,16 @@ def save_user_data(user_data):
             json.dump(data, file, indent=4)
     except (FileNotFoundError, json.JSONDecodeError):
         # If file doesn't exist or is empty, create it and write the data
-        with open(get_users_filename(), 'w') as file:
+        with open(get_users_filename(), 'w',encoding = 'UTF-8') as file:
             json.dump([user_data], file, indent=4)
 
 async def print_user_data(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     try:
-        with open(get_users_filename(), 'r') as file:
+        with open(get_users_filename(), 'r',encoding = 'UTF-8') as file:
             os.makedirs(DATA_FOLDER, exist_ok=True)
             users = json.load(file)
             message = "<b>User Information:</b>\n<pre>"
-            message += "Username | First Name | Last Name | Age | Favorite Color | Hobbies | Email\n"
+            message +="Username | First Name | Last Name | Age | Favorite Color | Hobbies | Email\n"
             message += "-" * 70 + "\n"  # Розділова лінія
             for user in users:
                 hobbies_str = ', '.join(hobby for sublist in user['hobbies'] for hobby in sublist)
@@ -186,18 +183,21 @@ async def print_user_data(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         await update.message.reply_text("No user information available.")
 
 def display_data_in_console(users):
+    """ display data in console"""
     table = PrettyTable()
-    table.field_names = ["Username", "First Name", "Last Name", "Age", "Favorite Color", "Hobbies", "Email"]
-    
+    table.field_names=["Username","First Name","Last Name","Age","Favorite Color","Hobbies","Email"]
+
     for user in users:
         hobbies_str = ', '.join(hobby for hobby_list in user['hobbies'] for hobby in hobby_list)
-        table.add_row([user['username'], user['first_name'], user['last_name'], user['age'], user['fav_color'], hobbies_str, user['email']])
+        table.add_row([user['username'], user['first_name'], user['last_name'], 
+        user['age'], user['fav_color'], hobbies_str, user['email']])
 
     print(table)
 
 async def print_user_data_console(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """ Output user data into console"""
     try:
-        with open(get_users_filename(), 'r') as file:
+        with open(get_users_filename(), 'r',encoding = 'UTF-8') as file:
             os.makedirs(DATA_FOLDER, exist_ok=True)
             users = json.load(file)
             display_data_in_console(users)
@@ -206,10 +206,12 @@ async def print_user_data_console(update: Update, context: ContextTypes.DEFAULT_
 
 # Command to cancel the conversation
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """ cancel inputing values"""
     await update.message.reply_text('Operation cancelled.')
     return ConversationHandler.END
 
 def main() -> None:
+    """ main method"""
     application = Application.builder().token('5655207446:AAFV0v3R8scQtxhuuApOgGCnWkx7Tp1mXAM').build()
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start_task_input)],
@@ -225,7 +227,6 @@ def main() -> None:
     application.add_handler(CommandHandler("print", print_user_data))
     application.add_handler(CommandHandler("print_console", print_user_data_console))
     application.add_handler(CommandHandler('history', history))
-    #application.add_handler(CommandHandler('test', bottest.test_validate_email(),bottest.test_validate_color()))
     application.run_polling()
 
 

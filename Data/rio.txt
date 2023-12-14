@@ -1,0 +1,5 @@
+[90mRRRR [0m[90m III [0m[90m OOO [0m
+[90mR   R[0m[90m  I  [0m[90mO   O[0m
+[90mRRRR [0m[90m  I  [0m[90mO   O[0m
+[90mR R  [0m[90m  I  [0m[90mO   O[0m
+[90mR  RR[0m[90m III [0m[90m OOO [0m

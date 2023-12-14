@@ -1,6 +1,8 @@
+""" Validator file"""
 import re
- 
+
 class Validator:
+    """Class validator """
     def validate_age(self, age):
         """Перевіряє, чи є вік валідним числом від 0 до 120."""
         try:
